@@ -9,13 +9,15 @@
     String createResult = "";
     String attackResult = "";
     String errorMessage = "";
+    
+    String levelStr = request.getParameter("level") != null ? request.getParameter("level") : "1";
 
     if ("execute".equals(action)) {
         try {
             String playerId = request.getParameter("playerId");
             String characterName = request.getParameter("characterName");
             String job = request.getParameter("job");
-            int level = Integer.parseInt(request.getParameter("level"));
+            int level = Integer.parseInt(levelStr);
 
             Battle battle = new Battle();
 
@@ -124,7 +126,7 @@
         </select>
 
         <label>Level</label>
-        <input type="number" name="level" value="10">
+        <input type="number" name="level" value="<%= levelStr %>">
 
         <button type="submit">몬스터 생성하고 공격하기</button>
     </form>

@@ -29,3 +29,16 @@ classDiagram
 
     class Create_Character_UI {
         <<boundary>>
+    }
+
+    class Attack_Monster_UI {
+        <<boundary>>
+    }
+
+    캐릭터 <|-- 전사
+    캐릭터 <|-- 마법사
+
+    플레이어 --> 전투 : 플레이어체크
+    전투 --> 캐릭터 : 생성/공격
+    Create_Character_UI --> 전투 : 캐릭터생성 요청
+    Attack_Monster_UI --> 전투 : 몬스터공격 요청

@@ -21,3 +21,16 @@ sequenceDiagram
         end
 
         alt 데미지 >= 200
+            전투-->>UI: S급 공격
+        else 데미지 >= 100
+            전투-->>UI: A급 공격
+        else 데미지 < 100
+            전투-->>UI: B급 공격
+        end
+
+        UI-->>사용자: 공격 결과 출력
+    else 플레이어id != "hero"
+        플레이어객체-->>전투: false
+        전투-->>UI: 플레이어체크 실패
+        UI-->>사용자: 오류 메시지 출력
+    end

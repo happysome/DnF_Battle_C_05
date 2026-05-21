@@ -1,4 +1,4 @@
-'''mermaid
+```mermaid
 flowchart LR
     플레이어((플레이어))
 

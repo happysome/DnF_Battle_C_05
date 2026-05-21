@@ -1,4 +1,4 @@
-'''mermaid
+```mermaid
 classDiagram
     class 플레이어 {
         +String 플레이어id

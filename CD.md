@@ -1,6 +1,7 @@
 ```mermaid
 classDiagram
     class 플레이어 {
+        -String 플레이어id
         +플레이어체크() boolean
     }
     
@@ -10,8 +11,7 @@ classDiagram
         +int 레벨
         +int HP
         +int 공격력
-        +스킬발동()* 
-    }
+        +스킬발동()* }
     
     class 전사 {
         +스킬발동() 
@@ -22,8 +22,8 @@ classDiagram
     }
     
     class 전투 {
-        +캐릭터생성() 
-        +몬스터공격() 
+        +캐릭터생성(캐릭터명:String, 레벨:int, HP:int, 공격력:int) 
+        +몬스터공격(플레이어id:String, 캐릭터명:String) 
     }
     
     class 캐릭터_생성_UI {
@@ -33,8 +33,7 @@ classDiagram
     class 몬스터_공격_UI {
         <<boundary>>
     }
-
-    %% 관계 정의 (상속 및 의존/연관 관계)
+    
     캐릭터 <|-- 전사 : 상속 (검 휘두르기)
     캐릭터 <|-- 마법사 : 상속 (파이어볼)
     

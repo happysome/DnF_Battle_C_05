@@ -2,11 +2,6 @@
 classDiagram
     direction TB
 
-    class Create_Character_UI
-    class Attack_Monster_UI
-    class Add_Item_UI
-    class Join_Guild_UI
-
     class 전투 {
         +캐릭터생성(플레이어id: String, 캐릭터명: String, 직업: String, 레벨: int) String
         +몬스터공격(플레이어id: String, 캐릭터명: String, 몬스터명: String, 몬스터체력: int) String
@@ -56,15 +51,10 @@ classDiagram
         +캐릭터가입(캐릭터객체: 캐릭터) boolean
     }
 
-    Create_Character_UI ..> 전투 : 의존
-    Attack_Monster_UI ..> 전투 : 의존
-    Add_Item_UI ..> 전투 : 의존
-    Join_Guild_UI ..> 전투 : 의존
-
     전투 ..> 플레이어 : 의존
     전투 ..> 캐릭터 : 의존
     전투 ..> 길드 : 의존
-    전투 ..> 아이템 : 의존
+    전투 ..> 인벤토리 : 의존
 
     전사 --|> 캐릭터 : 상속
     마법사 --|> 캐릭터 : 상속

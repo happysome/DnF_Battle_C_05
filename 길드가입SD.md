@@ -18,11 +18,11 @@ sequenceDiagram
 
 &#x20;   Join\_Guild\_UI->>전투: 길드가입(플레이어id, 길드명)
 
-&#x20;   전투->>플레이어객체: 플레이어check(플레이어id)
+&#x20;   전투->>플레이어객체: 플레이어체크(플레이어id)
 
 
 
-&#x20;   alt 플레이어check 결과 == true
+&#x20;   alt 플레이어체크 결과 == true
 
 &#x20;       플레이어객체-->>전투: true
 
@@ -52,7 +52,7 @@ sequenceDiagram
 
 &#x20;       end
 
-&#x20;   else 플레이어check 결과 == false
+&#x20;   else 플레이어체크 결과 == false
 
 &#x20;       플레이어객체-->>전투: false
 

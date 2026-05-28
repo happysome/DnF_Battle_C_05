@@ -9,7 +9,7 @@ sequenceDiagram
 
     플레이어->>Add_Item_UI: 아이템획득 요청(플레이어id, 아이템명, 아이템타입, 아이템가치)
     Add_Item_UI->>전투: 아이템획득(플레이어id, 아이템명, 아이템타입, 아이템가치)
-    전투->>플레이어객체: 플레이어check(플레이어id)
+    전투->>플레이어객체: 플레이어체크(플레이어id)
 
     alt 플레이어check 결과 == true
         플레이어객체-->>전투: true
@@ -36,7 +36,7 @@ sequenceDiagram
             전투-->>Add_Item_UI: "인벤토리 가득 참"
             Add_Item_UI-->>플레이어: 오류 메시지 출력
         end
-    else 플레이어check 결과 == false
+    else 플레이어체크 결과 == false
         플레이어객체-->>전투: false
         전투-->>Add_Item_UI: "플레이어체크 실패"
         Add_Item_UI-->>플레이어: 오류 메시지 출력

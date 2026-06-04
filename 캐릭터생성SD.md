@@ -1,5 +1,6 @@
 ```mermaid
 sequenceDiagram
+    autonumber %%
     actor 플레이어
     participant Create_Character_UI
     participant 전투
